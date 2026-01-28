@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Renaissance helps children build confidence and fluency in English through real-world communication and exposure.">
-    <title>Renaissance - English Communication for Children</title>
+    <meta name="description" content="Renaissance helps children build confidence and fluency in English.">
+    <title>Renaissance - Premium English Education</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">Renaissance</div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span>
@@ -25,7 +30,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#founder">Meet the Founder</a></li>
-            <li><a href="#products">What We Sell</a></li>
+            <li><a href="#products">Our Courses</a></li>
             <li><a href="#history">Our History</a></li>
         </ul>
     </nav>
@@ -34,75 +39,64 @@
 
     <main>
         <section class="hero" id="home">
-            <div class="container">
-                <h1>Nurture Confident English Speakers</h1>
-                <p>Give your child the gift of fluent, natural English communication through immersive exposure and real-world practice</p>
-                <a href="https://wa.me/919898989898" class="cta-button">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                    Start Your Journey
-                </a>
+            <img src="logo.png" alt="Happy children learning" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+            
+            <div class="container hero-content">
+                <h1>Master English with Confidence</h1>
+                <p>Give your child the gift of fluent, natural English communication through immersive exposure.</p>
+                <div class="cta-group">
+                    <a href="https://wa.me/919898989898" class="cta-button whatsapp">
+                        Start Your Journey
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section class="about" id="about">
+        <section class="founder-section" id="founder">
             <div class="container">
-                <h2>A Natural Approach to Language Mastery</h2>
-                <p>Renaissance creates an environment where children absorb English naturally, building confidence through meaningful conversations and authentic interactions. Our program focuses on practical communication skills that prepare your child for success in an interconnected world.</p>
+                <h2>Meet the Founder</h2>
+                <div class="founder-card glass-card">
+                    <h3>[Insert Name]</h3>
+                    <p class="founder-bio">"I started Renaissance because I realized that traditional schools teach grammar, not communication. My mission is to help children find their voice."</p>
+                </div>
             </div>
         </section>
 
-        <section class="benefits">
+        <section class="products-section" id="products">
             <div class="container">
-                <h2>Why Choose Renaissance</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <h3>Build Authentic Confidence</h3>
-                        <p>Through regular practice and supportive guidance, children develop genuine confidence in expressing themselves clearly and naturally in English.</p>
+                <h2>What We Offer</h2>
+                <div class="products-grid">
+                    <div class="product-card glass-card">
+                        <h3>1-on-1 Coaching</h3>
+                        <p>Personalized attention to fix grammar and boost confidence instantly.</p>
                     </div>
-                    <div class="benefit-card">
-                        <h3>Develop True Fluency</h3>
-                        <p>Our immersive approach helps children think in English, moving beyond translation to achieve natural, effortless communication.</p>
+                    <div class="product-card glass-card">
+                        <h3>Group Classes</h3>
+                        <p>Interactive sessions where children learn to speak in front of others.</p>
                     </div>
-                    <div class="benefit-card">
-                        <h3>Master Real-World Skills</h3>
-                        <p>Children learn practical language skills for everyday situations, preparing them for academic success and future opportunities.</p>
+                    <div class="product-card glass-card">
+                        <h3>Kids' English</h3>
+                        <p>Fun, game-based learning for ages 8-14.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="trust">
+        <section class="history-section" id="history">
             <div class="container">
-                <h2>Trusted by Families Worldwide</h2>
-                <div class="trust-content">
-                    <div class="trust-item">
-                        <div class="trust-number">500+</div>
-                        <div class="trust-label">Children Enrolled</div>
-                    </div>
-                    <div class="trust-item">
-                        <div class="trust-number">95%</div>
-                        <div class="trust-label">Parent Satisfaction</div>
-                    </div>
-                    <div class="trust-item">
-                        <div class="trust-number">3+</div>
-                        <div class="trust-label">Years of Excellence</div>
-                    </div>
-                </div>
+                <h2>Our History</h2>
+                <p>Founded in 2024, Renaissance started with a single student. Today, we have helped over 500+ students master the art of communication.</p>
             </div>
         </section>
 
-        <section class="final-cta">
+        <section class="social-hub">
             <div class="container">
-                <h2>Begin Your Child's English Journey</h2>
-                <p>Connect with us today to learn how Renaissance can help your child become a confident English communicator</p>
-                <a href="https://wa.me/919898989898" class="cta-button">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                    Get in Touch
-                </a>
+                <h2>Join Our Community</h2>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn instagram">Follow on Instagram</a>
+                    <a href="https://wa.me/919898989898" class="social-btn whatsapp">Chat on WhatsApp</a>
+                </div>
             </div>
         </section>
     </main>
