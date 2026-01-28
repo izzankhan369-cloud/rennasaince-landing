@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +17,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: var(--text-primary);
     background-color: var(--beige);
     line-height: 1.6;
@@ -21,7 +25,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Merriweather', Georgia, serif;
     font-weight: 400;
     line-height: 1.2;
 }
@@ -38,18 +42,19 @@ header {
     top: 0;
     z-index: 100;
     padding: 1.5rem 0;
-    background-color: var(--beige);
+    background-color: rgba(245, 241, 232, 0.95);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--light-brown);
 }
 
-header .container {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-family: Georgia, serif;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 1.5rem;
     color: var(--dark-brown);
     letter-spacing: 0.05em;
@@ -130,7 +135,7 @@ header .container {
 }
 
 .menu-links a {
-    font-family: Georgia, serif;
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 1.5rem;
     color: var(--dark-brown);
     text-decoration: none;
@@ -162,38 +167,79 @@ header .container {
 }
 
 .hero {
-    background: linear-gradient(180deg, var(--beige) 0%, #FFFFFF 100%);
-    padding: 4rem 0;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--beige) 0%, #FFFFFF 100%);
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(245, 241, 232, 0.9) 0%, rgba(212, 196, 176, 0.85) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 4rem 0;
 }
 
 .hero h1 {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     color: var(--dark-brown);
+    font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 35rem;
+    margin-bottom: 2.5rem;
+    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
 }
 
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .cta-button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.625rem;
     background-color: var(--dark-brown);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.125rem 2.5rem;
     text-decoration: none;
-    border-radius: 0.25rem;
-    font-size: 1.0625rem;
-    transition: all 0.2s;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: all 0.3s;
     box-shadow: 0 8px 20px rgba(92, 64, 51, 0.25);
 }
 
@@ -203,121 +249,154 @@ header .container {
     box-shadow: 0 12px 28px rgba(92, 64, 51, 0.3);
 }
 
-.about {
-    background-color: white;
-    padding: 4rem 0;
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.about h2 {
-    font-size: 1.875rem;
+.founder-section {
+    padding: 5rem 0;
+    background-color: var(--light-brown);
+}
+
+.founder-section h2 {
+    font-size: 2.5rem;
     text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-brown);
+}
+
+.founder-card {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.founder-card h3 {
+    font-size: 1.875rem;
     margin-bottom: 1.5rem;
     color: var(--dark-brown);
 }
 
-.about p {
-    max-width: 45rem;
-    margin: 0 auto;
-    font-size: 1.0625rem;
+.founder-bio {
+    font-size: 1.125rem;
     color: var(--text-secondary);
-    text-align: center;
     line-height: 1.8;
+    font-style: italic;
 }
 
-.benefits {
-    padding: 4rem 0;
+.products-section {
+    padding: 5rem 0;
+    background-color: white;
 }
 
-.benefits h2 {
-    font-size: 1.875rem;
+.products-section h2 {
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--dark-brown);
 }
 
-.benefits-grid {
+.products-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    max-width: 70rem;
+    margin: 0 auto;
 }
 
-.benefit-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
+.product-card {
+    text-align: center;
 }
 
-.benefit-card h3 {
-    font-size: 1.375rem;
+.product-card h3 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--dark-brown);
 }
 
-.benefit-card p {
+.product-card p {
+    font-size: 1.0625rem;
     color: var(--text-secondary);
     line-height: 1.7;
 }
 
-.trust {
-    background-color: var(--light-brown);
-    padding: 4rem 0;
+.history-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--light-brown) 100%);
+    text-align: center;
 }
 
-.trust h2 {
-    font-size: 1.875rem;
+.history-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--dark-brown);
+}
+
+.history-section p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 50rem;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.social-hub {
+    padding: 5rem 0;
+    background-color: white;
     text-align: center;
+}
+
+.social-hub h2 {
+    font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--dark-brown);
 }
 
-.trust-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
-}
-
-.trust-item {
+.social-buttons {
     display: flex;
-    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.35);
-    padding: 2rem;
-    border-radius: 0.75rem;
-}
-
-.trust-number {
-    font-family: Georgia, serif;
-    font-size: 3rem;
-    color: var(--dark-brown);
-    margin-bottom: 0.5rem;
-}
-
-.trust-label {
-    font-size: 1rem;
-    color: var(--text-secondary);
-}
-
-.final-cta {
-    background-color: white;
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.final-cta h2 {
-    font-size: 1.875rem;
-    margin-bottom: 1.25rem;
-    color: var(--dark-brown);
-}
-
-.final-cta p {
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
     font-size: 1.0625rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 35rem;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn.instagram {
+    background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCAF45 100%);
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(131, 58, 180, 0.4);
+}
+
+.social-btn.whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.social-btn.whatsapp:hover {
+    background-color: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 footer {
@@ -333,56 +412,43 @@ footer p {
 
 @media (min-width: 48rem) {
     .hero h1 {
-        font-size: 2.75rem;
+        font-size: 3.5rem;
     }
 
     .hero p {
-        font-size: 1.25rem;
+        font-size: 1.375rem;
     }
 
-    .about h2,
-    .benefits h2,
-    .trust h2,
-    .final-cta h2 {
-        font-size: 2.25rem;
-    }
-
-    .benefits-grid {
+    .products-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
-    .trust-content {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-    }
-
-    .benefit-card {
-        padding: 2.5rem;
+    .founder-section h2,
+    .products-section h2,
+    .history-section h2,
+    .social-hub h2 {
+        font-size: 3rem;
     }
 }
 
 @media (min-width: 64rem) {
     .hero {
-        padding: 6rem 0;
+        min-height: 90vh;
     }
 
     .hero h1 {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
-    .about,
-    .benefits,
-    .trust,
-    .final-cta {
-        padding: 5rem 0;
+    .founder-section,
+    .products-section,
+    .history-section,
+    .social-hub {
+        padding: 6rem 0;
     }
 
-    .benefit-card {
+    .product-card {
         padding: 3rem;
-    }
-
-    .trust-number {
-        font-size: 3.5rem;
     }
 }
